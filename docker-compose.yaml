@@ -1,0 +1,14 @@
+# Create services for drupal swoole web, cli and database
+
+version: "3.7"
+
+services:
+  app:
+    build: .
+    environment:
+      DISABLE_DEFAULT_SERVER: 1
+    ports:
+      - 80:9501
+    # Volume to mount drupal-swoole to /var/www/html
+    volumes:
+      - ./:/var/www/html
